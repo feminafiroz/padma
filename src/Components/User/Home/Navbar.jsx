@@ -90,7 +90,7 @@ const Navbar = () => {
     initial={{ y: -50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
     transition={{ duration: 0.3, ease: "easeOut",  }}
-    className="  md:h-22 h-16 fixed top-0 z-50  w-full md:px-16 px-4  font-playfair bg-white">
+    className="  md:h-22 h-22 fixed top-0 z-50  w-full md:px-16 px-4  font-playfair bg-white">
       <div className="max-w-8xl mx-auto">
         <div className="flex items-center justify-between bg-white  w-full  py-2   pl-2 px-2">
           {/* Logo */}

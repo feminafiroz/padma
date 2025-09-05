@@ -21,7 +21,7 @@ function About() {
                 </div>
                 
                 {/* P.A.D.M.A. Acronym Section */}
-                <div className="flex  justify-center items-start gap-6 md:gap-8 lg:gap-30 my-8 md:my-12 w-full ">
+                <div className="flex md:flex-row flex-col  justify-center md:items-start items-center gap-6 md:gap-8 lg:gap-30 my-8 md:my-12 w-full ">
                     {padmaItems.map((item, index) => (
                         <div key={index} className="flex flex-col items-center text-center space-y-3  w-32 ">
                             <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center border border-gray-200 shadow-sm">

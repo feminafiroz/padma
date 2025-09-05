@@ -6,11 +6,11 @@ import coinpadma from '../../../assets/images/coinpadma.svg'
 
 function CoinageSection() {
   return (
-     <section className="bg-white font-helvetica py-16  px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto flex w-full gap-12 md:gap-16  pr-10 ">
+     <section className="bg-white font-helvetica md:py-16 py-8  px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto flex md:flex-row flex-col  w-full gap-12 md:gap-16  md:pr-10 ">
                 
                 {/* Left Column: Text Content */}
-                <div className="flex flex-col  md:items-start md:text-left md:w-[50%] w-full  ">
+                <div className="flex flex-col  md:items-start items-center md:text-left text-center md:w-[50%] w-full  ">
                     <h2 className="text-3xl md:text-4xl font-playfair text-dark-red">
                         Coinage Of The Name
                     </h2>
