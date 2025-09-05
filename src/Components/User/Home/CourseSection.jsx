@@ -1,8 +1,8 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import coursebg from '../../../assets/images/coursebg.svg'
 import lyn from '../../../assets/images/lyn.svg'
 import star from '../../../assets/images/star.svg'
-
 
 // --- Data for the Courses ---
 const courseData = [
@@ -28,68 +28,107 @@ const courseData = [
     }
 ];
 
+// Reusable animation props
+const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const cardHover = {
+    whileHover: { 
+        y: -15, 
+        scale: 1.03,
+        transition: { duration: 0.3, ease: "easeOut" }
+    }
+};
+
 const NumberBurstIcon = ({ number }) => (
-    <div className="absolute top-8 left-5 w-20 h-20">
-        {/* You can replace the SVG with your img tag like this: */}
+    <motion.div 
+        className="absolute top-4 left-1 w-20 h-20"
+        animate={{ rotate: [0, 5, -5, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        whileHover={{ scale: 1.1, rotate: 360, transition: { duration: 0.5 } }}
+    >
         <img src={star} alt={`Course ${number}`} className="w-full h-full" />
-        {/* <svg viewBox="0 0 100 100" className="w-full h-full fill-current text-dark-red">
-            <path d="M50 0L61.2 35.5L97.6 30.9L73.1 50L97.6 69.1L61.2 64.5L50 100L38.8 64.5L2.4 69.1L26.9 50L2.4 30.9L38.8 35.5L50 0Z" />
-        </svg> */}
-        <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl font-playfair">
+        <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-4xl font-playfair pb-3">
             {number}
         </div>
-    </div>
+    </motion.div>
 );
 
+const CourseCard = ({ number, details }) => (
+    <motion.div
+        className="relative w-full aspect-[3.5/4]"
+        {...fadeInUp}
+        {...cardHover}
+        whileInView={{
+            ...fadeInUp.whileInView,
+            transition: { ...fadeInUp.transition, delay: number * 0.1 }
+        }}
+    >
+        <img 
+            src={coursebg}
+            alt="Course background" 
+            className="absolute inset-0 w-full h-full object-contain"
+        />
 
+        <NumberBurstIcon number={number} />
 
-const CourseCard = ({ number, title, details }) => (
-  <div
-     className="relative w-full aspect-[3.5/4]  "
-  >
-    <img 
-        src= {coursebg}
-        alt="Course background" 
-        className="absolute inset-0 w-full h-full object-contain"
-    />
-
-    <NumberBurstIcon number={number} />
-
-    <div className="absolute inset-0 flex flex-col justify-center items-center p-6 text-dark-red pt-20 ">
-        {/* <h3 className="text-lg font-semibold leading-snug mb-3">{title}</h3> */}
-        {/* Using whitespace-pre-line to respect the newlines in the details string */}
-       <p
-        className="text-base leading-loose tracking-widest text-dark-red/80  font-helvetica max-w-xs  pt-2"
-        dangerouslySetInnerHTML={{ __html: details }}
-        ></p>
-    </div>
-  </div>
+        <motion.div 
+            className="absolute inset-0 flex flex-col justify-center items-center p-6 text-dark-red pt-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: number * 0.1 + 0.3, duration: 0.5 }}
+        >
+            <p
+                className="text-base leading-loose tracking-widest text-dark-red/80 font-helvetica max-w-xs pt-2"
+                dangerouslySetInnerHTML={{ __html: details }}
+            />
+        </motion.div>
+    </motion.div>
 );
-
 
 function CourseSection() {
-  return (
-     <section className="bg-[var(--background)] font-helvetica py-24 sm:py-32 px-4 sm:px-6 lg:px-8" id="Course">
+    return (
+        <section className="bg-[var(--background)] font-helvetica py-6 md:py-32 px-4 sm:px-6 lg:px-8" id="Course">
             <div className="max-w-7xl mx-auto flex flex-col items-center">
+                
                 {/* Main Title */}
-                <h2 className="text-2xl md:text-2xl font-playfair font-bold text-dark-red text-center">
+                <motion.h2 
+                    className="text-2xl md:text-3xl font-playfair font-extrabold text-dark-red tracking-widest text-center"
+                    {...fadeInUp}
+                >
                     Course Sample
-                </h2>
-               <div className="">
-                    <img src = {lyn} alt='aboutline' className='w-auto h-auto' />
-                </div>
+                </motion.h2>
+                
+                <motion.div 
+                    className=""
+                    {...fadeInUp}
+                    transition={{ ...fadeInUp.transition, delay: 0.2 }}
+                >
+                    <img src={lyn} alt='aboutline' className='w-auto h-auto' />
+                </motion.div>
 
                 {/* Responsive Grid */}
-                <div className="mt-16 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
-                     {courseData.map((course) => (
+                <motion.div 
+                    className="md:mt-16 mt-9 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16 md:px-0 px-8"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ staggerChildren: 0.1, delayChildren: 0.4 }}
+                >
+                    {courseData.map((course) => (
                         <div key={course.number}>
                             <CourseCard {...course} />
                         </div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
-  )
+    )
 }
 
 export default CourseSection

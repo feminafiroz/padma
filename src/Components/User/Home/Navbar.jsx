@@ -4,6 +4,9 @@ import { gsap } from "gsap";
 import { Menu, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import Logo from '../../../assets/images/logo.png'
+import logoo from '../../../assets/images/logoo.svg'
+
+import navmobbg from '../../../assets/images/navmobbg.png'
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 
 
@@ -20,6 +23,17 @@ const Navbar = () => {
     { label: "Product and Services", href: "#Products" },
     { label: "Course sample", href: "#Course" },
     { label: "Team", href: "#Team" },
+  ];
+
+    const navItemsMob = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#About" },
+    { label: "Vision and Mission", href: "#Vision" },
+    { label: "Product and Services", href: "#Products" },
+    { label: "Course sample", href: "#Course" },
+    { label: "Team", href: "#Team" },
+    { label: "Contact", href: "#contact" },
+
   ];
 
   const scrollToSection = (id) => {
@@ -60,11 +74,7 @@ const Navbar = () => {
     if (isOpen) {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
-      gsap.fromTo(
-        menuBackgroundRef.current,
-        { scaleY: 0, opacity: 0 },
-        { scaleY: 1, opacity: 1, duration: 0.75, ease: "power3.inOut" }
-      );
+      // GSAP animations for menu items
       gsap.fromTo(
         menuItemsRef.current,
         { x: -50, opacity: 0 },
@@ -89,48 +99,44 @@ const Navbar = () => {
     <motion.nav 
     initial={{ y: -50, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
-    transition={{ duration: 0.3, ease: "easeOut",  }}
-    className="  md:h-22 h-22 fixed top-0 z-50  w-full md:px-16 px-4  font-playfair bg-white">
+    transition={{ duration: 0.7, ease: "easeOut",  }}
+    className="md:h-22 h-22 fixed top-0 z-50 w-full md:px-16 px-4 font-playfair bg-white">
       <div className="max-w-8xl mx-auto">
-        <div className="flex items-center justify-between bg-white  w-full  py-2   pl-2 px-2">
+        <div className="flex items-center justify-between bg-white w-full py-2 pl-2 px-2">
           {/* Logo */}
           <div className="flex-shrink-0 md:pl-10 pl-4">
             <div className="relative flex items-start cursor-pointer ">
-              <img src={Logo} alt="Logo" className=" w-auto h-18" />
+              <img src={Logo} alt="Logo" className="w-auto h-18" />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-    <div className="hidden lg:flex items-center space-x-10 bg-white px-2 py-2">
-    {navItems.map((item) => (
-      <button
-        key={item.href}
-        onClick={() => scrollToSection(item.href.substring(1))}
-        className={`relative font-playfair text-base capitalize font-medium transition-colors px-3 py-1 ${
-          activeSection === item.href.substring(1)
-            ? "text-[#9F5434]" // Added a distinct active text color for clarity
-            : "text-[#9F5434]"
-        } group`}
-      >
-        {item.label}
-
-        {/* This is the hover underline for INACTIVE items */}
-        <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-[1px] bg-[#9F5434] transition-all duration-300 group-hover:w-4/5"></span>
-
-        {/* This is the underline for ACTIVE items (Corrected) */}
-        {activeSection === item.href.substring(1) && (
-          <span
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-4/5 bg-[#9F5434] rounded-full"
-          ></span>
-        )}
-      </button>
-    ))}
-  </div>
+          <div className="hidden lg:flex items-center space-x-10 bg-white px-2 py-2">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollToSection(item.href.substring(1))}
+                className={`relative font-playfair text-base capitalize font-medium transition-colors px-3 py-1 ${
+                  activeSection === item.href.substring(1)
+                    ? "text-[#7E221F]"
+                    : "text-[#7E221F]"
+                } group`}
+              >
+                {item.label}
+                <span className="absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-[1px] bg-[#7E221F] transition-all duration-300 group-hover:w-4/5"></span>
+                {activeSection === item.href.substring(1) && (
+                  <span
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] w-4/5 bg-[#7E221F] rounded-full"
+                  ></span>
+                )}
+              </button>
+            ))}
+          </div>
 
           {/* Contact Button */}
           <div className="flex">
-            <button className="lg:block hidden bg-[#9F5434] hover:bg-[#9F5434] text-white rounded-full px-4 py-1" 
-             onClick={() => scrollToSection("contact")}>
+            <button className="lg:block hidden bg-[#7E221F] hover:bg-[#7E221F] text-white rounded-full px-4 py-1" 
+              onClick={() => scrollToSection("contact")}>
               Contact us
             </button>
           </div>
@@ -139,7 +145,7 @@ const Navbar = () => {
           <div className="lg:hidden pr-2">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center px-4 py-2 rounded-[30px] text-white bg-[#9F5434]"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-[30px] text-white bg-[#7E221F]"
             >
               <Menu size={24} />
             </button>
@@ -152,37 +158,81 @@ const Navbar = () => {
         {isOpen && (
           <motion.div
             ref={menuBackgroundRef}
-            initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: 1 }}
-            exit={{ scaleY: 0, opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#fff] lg:hidden pt-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            // 1. FIX: Increased z-index to ensure it's on top of the navbar.
+            className="fixed inset-0 z-[100] lg:hidden pt-4"
+             style={{ 
+              backgroundImage: `url(${navmobbg})`, // Use .src for Next.js image imports or just navmobbg if it's a direct URL/string
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
           >
             <div className="flex flex-col h-full pb-6 pl-12 pr-4">
               {/* Header */}
-              <div className="flex justify-between items-center mb-10 md:pr-20 lg:pr-0">
-                <Image src={Logo} alt="Logo" className="h-auto w-[30%]" />
+              <div className="flex justify-between items-center mb-10 pr-10">
+                {/* 2. FIX: Changed <Image> to <img> to prevent crash. */}
+                <img src={logoo} alt="Logo" className="h-auto w-auto" />
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-lg text-white bg-[#9F5434]"
+                  className="p-2 rounded-lg text-[#7E221F]  bg-white"
                 >
                   <X size={24} />
                 </button>
               </div>
 
               {/* Mobile Navigation Links */}
-              <nav className="flex flex-col pt-10 items-start flex-1 font-poppins">
-                {navItems.map((item, i) => (
+              <nav className="flex flex-col pt-3 items-start flex-1 font-poppins">
+                {navItemsMob.map((item, i) => (
                   <button
                     key={item.label}
                     ref={(el) => (menuItemsRef.current[i] = el)}
                     onClick={() => scrollToSection(item.href.substring(1))}
-                    className="text-xl font-bold pb-6 text-[#9F5434]/80 hover:text-[#9F5434]"
+                    className="text-xl font-bold pb-6 text-white"
                   >
                     {item.label}
                   </button>
                 ))}
+
+
+                
+               <motion.p 
+                initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -20, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut", delay: 1.2 }}
+               
+               className="text-white pt-6 font-helvetica">
+                <span className="uppercase ">Noviindus Technologies 1st floor,</span> <br /> GSBC, East Nadakkave, Nadakkave,<br/> Kozhikode, Kerala 673006
+              </motion.p>
+
+              <motion.div 
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -20, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut", delay: 1.4 }}
+              className="space-x-5 text-white pt-5 font-helvetica">
+                  <span>Facebook</span>
+                  <span>instagram</span>
+                  <span>Linkdin</span>
+              </motion.div>
+
+
+
+
+
               </nav>
+
+
+             
+
+
+
             </div>
+            
           </motion.div>
         )}
       </AnimatePresence>

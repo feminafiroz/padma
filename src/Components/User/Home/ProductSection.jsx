@@ -1,18 +1,30 @@
-import React, { useState, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { motion } from 'framer-motion';
 import pline from '../../../assets/images/pline.svg'
 import bgpro from '../../../assets/images/bgpro.png'
 import belowcard from '../../../assets/images/belowcard.png'
-import star from '../../../assets/images/star.svg'
-
-
-
 
 const ProductSection = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const sliderRef = useRef(null);
+  // Reusable animation props
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
+
+  const staggerContainer = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { staggerChildren: 0.1, duration: 0.3 }
+  };
+
+  const cardHover = {
+    whileHover: { y: -10, transition: { duration: 0.2 } }
+  };
 
   const services = [
     {
@@ -44,174 +56,129 @@ const ProductSection = () => {
     }
   ];
 
-  const handleTouchStart = (e) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe && currentSlide < services.length - 1) {
-      setCurrentSlide(currentSlide + 1);
-    }
-    if (isRightSwipe && currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-    }
-  };
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % services.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + services.length) % services.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
   return (
     <div className="relative py-10 px-4 lg:pt-28" id="Products">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-amber-300 rounded-full"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 border-2 border-red-300 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-orange-300 rotate-45"></div>
+        <motion.div 
+          className="absolute top-10 left-10 w-32 h-32 border-2 border-amber-300 rounded-full"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute bottom-10 right-10 w-24 h-24 border-2 border-red-300 rounded-full"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute top-1/2 left-1/4 w-16 h-16 border border-orange-300 rotate-45"
+          animate={{ rotate: [45, 90, 45] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-playfair font-extrabold text-dark-red text-center tracking-widest mb-2">
+          <motion.h2 
+            className="text-2xl md:text-3xl font-playfair font-extrabold text-dark-red text-center tracking-widest mb-2"
+            {...fadeInUp}
+          >
             Products & Services
-          </h2>
-          <div className="flex justify-center items-center">
-            <img src = {pline} alt='pline' className='w-auto h-auto' />
-        </div>
+          </motion.h2>
+          <motion.div 
+            className="flex justify-center items-center"
+            {...fadeInUp}
+            transition={{ ...fadeInUp.transition, delay: 0.2 }}
+          >
+            <img src={pline} alt='pline' className='w-auto h-auto' />
+          </motion.div>
         </div>
 
         {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <motion.div 
+          className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          {...staggerContainer}
+        >
           {services.map((service, index) => (
-            <div className='flex flex-col'>
+            <motion.div 
+              key={index} 
+              className='flex flex-col'
+              {...fadeInUp}
+              {...cardHover}
+              transition={{ ...fadeInUp.transition, delay: index * 0.1 }}
+            >
               <div className="h-full bg-[#7E221F] rounded-2xl p-6 shadow-lg text-white font-helvetica relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div
-        className="absolute inset-0 opacity-100 bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(${bgpro})` }}
-        ></div>
-        <div className="relative z-10">
-            <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-           <ul className="space-y-3 list-none">
-  {service.items.map((item, index) => (
-    <li
-      key={index}
-      className="leading-relaxed relative pl-6 before:content-['★'] before:absolute before:left-0 before:text-white"
-    >
-      {item}
-    </li>
-  ))}
-</ul>
-
-        </div>
-    </div>
-    <div className=''>
-        <img src={belowcard} alt='' className='' />
-         </div>
-    </div>
-          ))}
-        </div>
-
-        {/* Mobile Swiper View */}
-        <div className="md:hidden">
-          <div 
-            className="relative overflow-hidden"
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            ref={sliderRef}
-          >
-            <div 
-              className="flex transition-transform duration-300 ease-out"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {services.map((service, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-4">
-                  <div className="bg-[#7E221F] rounded-2xl p-6 text-white shadow-2xl mx-auto max-w-sm">
-                    <h3 className="text-xl font-bold mb-6 text-center border-b  pb-3">
-                      {service.title}
-                    </h3>
-                    <ul className="space-y-3">
-                      {service.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-start">
-                          <span className="text-amber-300 mr-2 mt-1 text-sm">●</span>
-                          <span className="text-red-100 text-sm leading-relaxed">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div
+                  className="absolute inset-0 opacity-100 bg-no-repeat bg-cover"
+                  style={{ backgroundImage: `url(${bgpro})` }}
+                ></div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                  <ul className="space-y-3 list-none">
+                    {service.items.map((item, itemIndex) => (
+                      <li
+                        key={itemIndex}
+                        className="leading-relaxed relative pl-6 before:content-['★'] before:absolute before:left-0 before:text-white"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+              <div>
+                <img src={belowcard} alt='' />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-          {/* Navigation Arrows */}
-          <div className="flex justify-between items-center mt-6 px-4">
-            <button
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-              className={`p-2 rounded-full transition-all duration-200 ${
-                currentSlide === 0
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-red-800 text-white hover:bg-red-700 shadow-lg'
-              }`}
-            >
-              <ChevronLeft size={24} />
-            </button>
-
-            <div className="flex space-x-2">
-              {services.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === currentSlide
-                      ? 'bg-red-800 scale-125'
-                      : 'bg-red-300 hover:bg-red-500'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              onClick={nextSlide}
-              disabled={currentSlide === services.length - 1}
-              className={`p-2 rounded-full transition-all duration-200 ${
-                currentSlide === services.length - 1
-                  ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                  : 'bg-red-800 text-white hover:bg-red-700 shadow-lg'
-              }`}
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-
-          {/* Progress Indicator */}
-          <div className="mt-4 text-center">
-            <span className="text-red-700 text-sm">
-              {currentSlide + 1} of {services.length}
-            </span>
-          </div>
-        </div>
+        {/* Mobile Swiper */}
+        <motion.div 
+          className="md:hidden"
+          {...fadeInUp}
+          transition={{ ...fadeInUp.transition, delay: 0.4 }}
+        >
+          <Swiper
+            slidesPerView={1.2}
+            spaceBetween={16}
+            centeredSlides={true}
+            className="!px-1"
+          >
+            {services.map((service, index) => (
+              <SwiperSlide key={index}>
+                <motion.div 
+                  className='flex flex-col h-full'
+                  
+                >
+                  <div className="flex-grow bg-[#7E221F] rounded-2xl p-6 shadow-lg text-white font-helvetica relative overflow-hidden h-72">
+                    <div
+                      className="absolute inset-0 opacity-100 bg-no-repeat bg-cover"
+                      style={{ backgroundImage: `url(${bgpro})` }}
+                    ></div>
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
+                      <ul className="space-y-3 list-none">
+                        {service.items.map((item, itemIndex) => (
+                          <li
+                            key={itemIndex}
+                            className="leading-relaxed relative pl-6 before:content-['★'] before:absolute before:left-0 before:text-white"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <img src={belowcard} alt='' />
+                  </div>
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </motion.div>
       </div>
     </div>
   );
