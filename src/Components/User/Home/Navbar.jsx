@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import Logo from '../../../assets/images/logo.png'
 import logoo from '../../../assets/images/logoo.svg'
-
 import navmobbg from '../../../assets/images/navmobbg.png'
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 
@@ -145,7 +144,7 @@ const Navbar = () => {
           <div className="lg:hidden pr-2">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center px-4 py-2 rounded-[30px] text-white bg-[#7E221F]"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-white bg-[#7E221F]"
             >
               <Menu size={24} />
             </button>
@@ -162,8 +161,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            // 1. FIX: Increased z-index to ensure it's on top of the navbar.
-            className="fixed inset-0 z-[100] lg:hidden pt-4"
+            className="fixed inset-0 z-[100] lg:hidden pt-1"
              style={{ 
               backgroundImage: `url(${navmobbg})`, // Use .src for Next.js image imports or just navmobbg if it's a direct URL/string
               backgroundSize: 'cover',
@@ -171,14 +169,13 @@ const Navbar = () => {
               backgroundRepeat: 'no-repeat',
             }}
           >
-            <div className="flex flex-col h-full pb-6 pl-12 pr-4">
+            <div className="flex flex-col h-full pb-6 pl-12 pr-0">
               {/* Header */}
               <div className="flex justify-between items-center mb-10 pr-10">
-                {/* 2. FIX: Changed <Image> to <img> to prevent crash. */}
                 <img src={logoo} alt="Logo" className="h-auto w-auto" />
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-lg text-[#7E221F]  bg-white"
+                  className="px-4 py-2 rounded-lg text-[#7E221F]  bg-white"
                 >
                   <X size={24} />
                 </button>
@@ -219,10 +216,6 @@ const Navbar = () => {
                   <span>instagram</span>
                   <span>Linkdin</span>
               </motion.div>
-
-
-
-
 
               </nav>
 

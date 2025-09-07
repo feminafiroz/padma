@@ -72,8 +72,19 @@ const directorsData = [
         position:"Trustee & Founding Director",
         imageUrl: aswathy,
         bio: [
-            "Dr. Aswathy Rajan, Founder director of padma foundation, is spearheading an initiative that integrates art, culture, ancient wisdom, and life practices to promote holistic well-being and positive transformation. With 15+ years of experience in education, research, and performance, dr. rajan leverages her expertise in indian knowledge systems to drive social impact. As assistant professor and assistant director of indian knowledge systems at rajagiri college of social sciences and research guide at kerala kalamandalam, she has established herself as a distinguished dance academician and performer.",
-            "Her impressive credentials include authoring three books and over 24 research papers, as well as receiving the prestigious nataraja ramakrishna sharada devi gold medal. Through padma foundation, Dr. Rajan is creating a lasting impact by promoting cultural heritage, fostering well-being, empowering communities to reclaim their roots, and nurturing future leaders. Dr. Rajan's work reflects her commitment to individual and community well-being, inspiring a movement with a profound and lasting impact on society."
+            "Dr. Aswathy Rajan, Founder Director of Padma Foundation, is a dedicated art practitioner and performer driving social impact through art, culture, and ancient wisdom. With 15+ years of experience in education, research, and performance, she leverages her expertise in Indian knowledge systems to promote holistic well-being and positive transformation.",
+            "She has served as Assistant Professor and Director of Indian Knowledge Systems at Rajagiri College of Social Sciences and Research Guide at Kerala Kalamandalam. Additionally, she worked as a Senior Lecturer at Jain University, Kochi, for three years, also handling University of West of Scotland franchisee courses.",
+            "Dr. Rajan has authored three books and over 24 research papers, and received the prestigious Nataraja Ramakrishna Sharada Devi Gold Medal. Through Padma Foundation, she promotes cultural heritage, fosters well-being, empowers communities, and nurtures future leaders, creating a lasting impact on society.",
+        ]
+    },
+     {
+        name: "Rinu Ashok",
+        position:"Domain Expert Director (Healing and Wellness)",
+        imageUrl: rinu,
+        bio: [
+            "Rinu Ashok is a distinguished professional with expertise in mental health therapy, life transformation coaching, and NLP training. As the founder of Nirvana Life Path, she has established herself as a leading figure in promoting mental wellness and holistic care. Her work at Padma Foundation as a Director of Healing Practice and Wellness further solidifies her commitment to integrating Indian Knowledge Systems principles into her practice, fostering cultural preservation and sustainable development.",
+            "With a background in psychology and nutrition, Rinu Ashok's approach emphasizes balance, mindfulness, and interconnectedness. Her contributions to Padma Foundation's mission are significant, as she works to bridge traditional knowledge with contemporary practices, supporting individuals in achieving harmony and well-being. Through her work, Rinu Ashok embodies the vision of blending timeless wisdom with modern relevance.",
+            "As a mental health therapist and life coach, Rinu Ashok helps individuals attain a balanced life using therapeutic tools in psychology. Her expertise extends to conducting workshops that foster perspective development, mindfulness, and well-being. With certifications in yoga and mindfulness-based stress reduction, she is well-equipped to support individuals in their journey towards holistic growth and transformation.",
         ]
     },
     {
@@ -84,14 +95,7 @@ const directorsData = [
             "Sharon Prince is a dedicated social work professional with a postgraduate degree and UGC NET certification. With over a year of teaching experience, she brings expertise in content creation to her role as a freelancer, having collaborated with educational institutions and jewellery brands for over 5 years. As a certified yoga and mindfulness-based stress reduction (MBSR) trainer, and zumba instructor, sharon conducts workshops that foster perspective development, mindfulness, and well-being. Her research interests include art therapy, mindfulness, child care, and elderly care, reflecting her passion for holistic development and social welfare. As a member of padma foundation, sharon looks forward to contributing her skills and experience to support the organization's mission."
         ]
     },
-     {
-        name: "rinu Prince",
-        position:"Domain Expert Director (Healing and Wellness)",
-        imageUrl: rinu,
-        bio: [
-            "Rinu P Ashok, as a director at Padma, contributes significantly to the organization's mission through the lens of Indian Knowledge Systems (IKS). By integrating IKS principles, she helps promote holistic well-being, cultural preservation, and sustainable development. Her expertise in mental wellness and holistic care, showcased through Nirvana Life Path, aligns with IKS's emphasis on balance, mindfulness, and interconnectedness. This approach enables Padma to foster a deeper understanding of ancient wisdom and its applications in modern life, supporting individuals in achieving harmony and well-being. By bridging traditional knowledge with contemporary practices, Rinu P Ashok's work at Padma embodies the IKS vision of blending timeless wisdom with modern relevance."
-        ]
-    }
+    
 ];
 
 // --- Director Profile Component ---

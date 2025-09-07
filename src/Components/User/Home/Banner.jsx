@@ -136,7 +136,7 @@ function Banner() {
             {["Padma", "Knowledgeverse"].map((word, i) => (
               <motion.span
                 key={word}
-                className="inline-block mr-4"
+                className="inline-block mr-4 mb-3"
                 variants={wordVariants}
                 initial="hidden"
                 animate="visible"
@@ -151,7 +151,7 @@ function Banner() {
         {/* Subtitle with typewriter effect */}
         <motion.div className="overflow-hidden">
           <motion.p 
-            className="mt-4 text-lg md:text-xl font-helvetica max-w-xl mx-auto"
+            className="mt-1 text-lg md:text-xl font-helvetica max-w-xl mx-auto"
             variants={subtitleVariants}
             initial="hidden"
             animate="visible"

@@ -38,7 +38,7 @@ const ProductSection = () => {
       items: [
         "Educational programs and workshops",
         "Course design and certificate courses",
-        "Mentoring for educators (like integration)"
+        "Mentoring for educators (IKS integration)"
       ]
     },
     {
@@ -53,18 +53,47 @@ const ProductSection = () => {
       items: [
         "Natya Therapy Services (Healing Through Art)"
       ]
-    }
+    },
+     {
+      title: "Consultancy:",
+      subtitle:"(Curriculum Design/ Action Plan for Institutions/ Workshops/FDPs)",
+      items: [
+        "Natya Therapy Services (Healing Through Art)",
+        "Indian Knowledge Systems",
+        "Performing Arts",
+        "Embodied Empathy Practice",
+        "Movement Therapy",
+        "Art integration",
+        "Cultural and Heritage Studies",
+        " National Education Policy",
+        " Sustainable Development Goals",
+      ]
+    },
+    {
+      title: "Practicum:",
+      items: [
+        "Kathakali",
+        " Mohiniyattam",
+        " Kuchipudi",
+        " Bharatanatyam",
+        " Chakyar Koothu",
+        " Sopana Music",
+        " Dance Music",
+        " Nattuvangam",
+        " Tiruvatira",
+      ]
+    },
   ];
 
   return (
     <div className="relative py-10 px-4 lg:pt-28" id="Products">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-10">
-        <motion.div 
+        {/* <motion.div 
           className="absolute top-10 left-10 w-32 h-32 border-2 border-amber-300 rounded-full"
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
+        /> */}
         <motion.div 
           className="absolute bottom-10 right-10 w-24 h-24 border-2 border-red-300 rounded-full"
           animate={{ scale: [1, 1.1, 1] }}
@@ -84,7 +113,7 @@ const ProductSection = () => {
             className="text-2xl md:text-3xl font-playfair font-extrabold text-dark-red text-center tracking-widest mb-2"
             {...fadeInUp}
           >
-            Products & Services
+            What We Do
           </motion.h2>
           <motion.div 
             className="flex justify-center items-center"
@@ -97,7 +126,7 @@ const ProductSection = () => {
 
         {/* Desktop Grid View */}
         <motion.div 
-          className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10"
           {...staggerContainer}
         >
           {services.map((service, index) => (
@@ -114,8 +143,9 @@ const ProductSection = () => {
                   style={{ backgroundImage: `url(${bgpro})` }}
                 ></div>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                  <ul className="space-y-3 list-none">
+                  <h3 className="text-xl font-semibold mb-1">{service.title}</h3>
+                  <h3 className="text-sm font-medium mb-2">{service.subtitle}</h3>
+                  <ul className="space-y-3 list-none pt-2.5">
                     {service.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
@@ -152,7 +182,7 @@ const ProductSection = () => {
                   className='flex flex-col h-full'
                   
                 >
-                  <div className="flex-grow bg-[#7E221F] rounded-2xl p-6 shadow-lg text-white font-helvetica relative overflow-hidden h-72">
+                  <div className="flex-grow bg-[#7E221F] rounded-2xl p-6 shadow-lg text-white font-helvetica relative overflow-hidden h-115">
                     <div
                       className="absolute inset-0 opacity-100 bg-no-repeat bg-cover"
                       style={{ backgroundImage: `url(${bgpro})` }}
