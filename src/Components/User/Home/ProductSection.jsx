@@ -182,14 +182,16 @@ const ProductSection = () => {
                   className='flex flex-col h-full'
                   
                 >
-                  <div className="flex-grow bg-[#7E221F] rounded-2xl p-6 shadow-lg text-white font-helvetica relative overflow-hidden h-115">
+                  <div className="flex-grow bg-[#7E221F] rounded-2xl p-6 shadow-lg text-white font-helvetica relative overflow-hidden h-128">
                     <div
                       className="absolute inset-0 opacity-100 bg-no-repeat bg-cover"
                       style={{ backgroundImage: `url(${bgpro})` }}
                     ></div>
                     <div className="relative z-10">
-                      <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                      <ul className="space-y-3 list-none">
+                      <h3 className="text-xl font-semibold mb-1">{service.title}</h3>
+                  <h3 className="text-sm font-medium mb-1">{service.subtitle}</h3>
+
+                      <ul className="space-y-3 list-none pt-3">
                         {service.items.map((item, itemIndex) => (
                           <li
                             key={itemIndex}
