@@ -203,19 +203,45 @@ const Navbar = () => {
                   transition={{ duration: 0.3, ease: "easeOut", delay: 1.2 }}
                
                className="text-white pt-6 font-helvetica">
-                <span className="uppercase ">Noviindus Technologies 1st floor,</span> <br /> GSBC, East Nadakkave, Nadakkave,<br/> Kozhikode, Kerala 673006
+                <span className="uppercase ">
+                  Ambadi Kattungal, Chunangaveli</span> <br />
+                  Erumathala P.O. Aluva,<br/>
+                  Ernakulam, Kerala 683112
               </motion.p>
 
-              <motion.div 
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: -20, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeOut", delay: 1.4 }}
-              className="space-x-5 text-white pt-5 font-helvetica">
-                  <span>Facebook</span>
-                  <span>instagram</span>
-                  <span>Linkdin</span>
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut", delay: 1.4 }}
+                className="space-x-5 text-white pt-5 font-helvetica"
+              >
+                <a 
+                  href="https://www.facebook.com/share/1ADAt5NU5g/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-500 transition-colors"
+                >
+                  Facebook
+                </a>
+                <a 
+                  href="https://www.instagram.com/padma_artschool?igsh=eXA2bnMzaXh3dnJ2" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-pink-500 transition-colors"
+                >
+                  Instagram
+                </a>
+                <a 
+                  href="https://www.linkedin.com/company/padma-foundation-for-art-and-culture/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  LinkedIn
+                </a>
               </motion.div>
+
 
               </nav>
 
