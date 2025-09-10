@@ -160,7 +160,7 @@ const Contact = () => {
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: 0.2 }}
               >
-                Looking for more information or have a question? Email us at <a href="mailto:aswathy@padmafoundation.in" className="underline">aswathy@padmafoundation.in</a> or fill in the form below and we'll get back to you.
+                Looking for more information or have a question? Email us at <a href="mailto:aswathyrajan@padmafoundation.in" className="underline">aswathyrajan@padmafoundation.in</a> or fill in the form below and we'll get back to you.
               </motion.p>
             </div>
 
@@ -173,8 +173,8 @@ const Contact = () => {
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700 rotate-45">
                 <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
-              <a href="mailto:aswathy@padmafoundation.in" className="text-xl text-gray-800 font-medium underline tracking-wide hover:text-dark-red transition-colors">
-                aswathy@padmafoundation.in
+              <a href="mailto:aswathyrajan@padmafoundation.in" className="text-xl text-gray-800 font-medium underline tracking-wide hover:text-dark-red transition-colors">
+                aswathyrajan@padmafoundation.in
               </a>
             </motion.div>
             
