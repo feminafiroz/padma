@@ -2,6 +2,9 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import patronlinee from '../../../assets/images/patronlinee.svg'
 import patroncircle from '../../../assets/images/patroncircle.png'
+import phdesign from '../../../assets/images/phdesign.svg' //left side of the image frame 
+import nambu from '../../../assets/images/nambu.png'
+
 
 // Reusable animation props
 const fadeInUp = {
@@ -35,6 +38,41 @@ const MandalaIcon = ({ index }) => (
     </motion.div>
 );
 
+const OrnateCorner = ({ className }) => (
+    <motion.img 
+        src={phdesign} 
+        alt="frame" 
+        className={`absolute w-12 h-12 ${className}`}
+        animate={{ rotate: [0, 2, -2, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
+    />
+);
+
+const OrnateImageFrame = ({ imageUrl, altText }) => (
+    <motion.div 
+        className="relative w-48 h-48 md:w-56 md:h-64 bg-white md:px-0 px-4"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+    >
+        {/* Corner decorations */}
+        <OrnateCorner className="-top-7 -left-7" /> 
+        <OrnateCorner className="-top-7 -right-7 transform scale-x-[-1]" /> 
+        <OrnateCorner className="-bottom-7 -left-7 transform scale-y-[-1]" /> 
+        <OrnateCorner className="-bottom-7 -right-7 transform scale-x-[-1] scale-y-[-1]" /> 
+
+        {/* Main image with padding to account for corner decorations */}
+        <div className="flex justify-center items-center md:pt-2">
+            <img    
+                src={imageUrl} 
+                alt={altText} 
+                className="w-48 h-48 md:w-52 md:h-60"
+                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/224x224/F3EADF/7E221F?text=Image'; }}
+            />
+        </div>
+    </motion.div>
+);
+
 function Patron() {
     return (
         <section className="bg-white font-helvetica py-10 md:py-10 px-4 sm:px-6 lg:px-8">
@@ -47,20 +85,33 @@ function Patron() {
                 >
                     Patron
                 </motion.h2>
-                
-                <motion.div 
-                    className="flex justify-center items-center"
+
+                 <motion.div 
+                    className="flex justify-center items-center pb-8 "
                     {...fadeInUp}
-                    transition={{ ...fadeInUp.transition, delay: 0.2 }}
+                    transition={{ ...fadeInUp.transition, delay: 0.4 }}
                 >
                     <img src={patronlinee} alt='pline' className='w-auto h-auto' />
                 </motion.div>
 
+
+                 <motion.div 
+                            className='flex flex-col items-center md:w-[30%] w-full'
+                            {...fadeInUp}
+                            transition={{ ...fadeInUp.transition, delay: 0.2  }}
+                        >
+                            <div className="flex justify-center pt-5">
+                                <OrnateImageFrame imageUrl={nambu} altText={`Profile of nambuthiri`} />
+                            </div>
+                </motion.div>
+                
+               
+
                 {/* Text Content */}
                 <motion.div 
-                    className="mt-8 font-helvetica font-sm font-light leading-loose md:text-base tracking-widest"
+                    className="mt-16 font-helvetica font-sm font-light leading-loose md:text-base tracking-widest"
                     {...fadeInUp}
-                    transition={{ ...fadeInUp.transition, delay: 0.4 }}
+                    transition={{ ...fadeInUp.transition, delay: 0.6 }}
                 >
                     <p>
                         Kalamandalam M.P.S. Namboodiri, a distinguished Kathakali scholar, performer, and teacher, serves as a patron of Padma. With a remarkable career spanning decades, he joined Kerala Kalamandalam's faculty in 1968 and retired as Principal in 1998. He was later reappointed as Dean of the Department of Kathakali in 2007. Dr.Namboodiri's expertise in Kathakali is evident in his co-authored book,"Kathakaliyude Rangapadha Charithram," which won the prestigious Kalamandalam award in 2007.

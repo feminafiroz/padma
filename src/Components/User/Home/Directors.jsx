@@ -166,14 +166,14 @@ function Directors() {
             
             {/* Main Title */}
             <motion.h2 
-                className="text-2xl md:text-3xl font-playfair font-extrabold text-dark-red text-left tracking-widest mb-2 pl-7"
+                className="text-2xl md:text-3xl font-playfair mx-auto font-extrabold text-dark-red text-left tracking-widest mb-2 pl-2"
                 {...fadeInUp}
             >
                 Directors
             </motion.h2>
             
             <motion.div 
-                className="flex justify-start items-start"
+                className="flex justify-center items-center"
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: 0.2 }}
             >
