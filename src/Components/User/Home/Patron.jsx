@@ -114,12 +114,12 @@ function Patron() {
                     transition={{ ...fadeInUp.transition, delay: 0.6 }}
                 >
                     <p>
-                        Kalamandalam M.P.S. Namboodiri, a distinguished Kathakali scholar, performer, and teacher, serves as a patron of Padma. With a remarkable career spanning decades, he joined Kerala Kalamandalam's faculty in 1968 and retired as Principal in 1998. He was later reappointed as Dean of the Department of Kathakali in 2007. Dr.Namboodiri's expertise in Kathakali is evident in his co-authored book,"Kathakaliyude Rangapadha Charithram," which won the prestigious Kalamandalam award in 2007.
+                       Kalamandalam M.P.S. Namboodiri, affectionately known as MPS Ashan, is a legendary figure in the realm of Kathakali, renowned for his profound expertise and unwavering dedication. As a patron of Padma, he brings a wealth of knowledge and experience, guiding the organization in its mission to promote art, culture, and holistic well-being. MPS Ashan's illustrious career, spanning decades, has been marked by numerous accolades, including the prestigious Kalamandalam Award and recognition from the Government of India's National Academy for Music, Dance, and Drama. His philosophy on Kathakali extends beyond its physical aspects, emphasizing its profound impact on mental well-being and inner balance. As he aptly puts it, "Kathakali is not just a dance form; it's a way of life that harmonizes the body and mind, bringing balance and inner peace." Through his legacy, MPS Ashan continues to inspire and nurture the world of Kathakali, leaving an indelible mark on the cultural landscape.
                     </p>
                     <br />
-                    <p>
+                    {/* <p>
                        His outstanding contributions to Kathakali earned him recognition from the Government of India's National Academy for Music, Dance, and Drama in 2013. As a patron of Padma, Dr. Namboodiri brings his wealth of knowledge and experience, guiding the organization in its mission to promote art, culture, and holistic well-being.
-                    </p>
+                    </p> */}
                 </motion.div>
             </div>
 

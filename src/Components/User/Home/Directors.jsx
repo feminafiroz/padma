@@ -5,6 +5,8 @@ import phdesign from '../../../assets/images/phdesign.svg' //left side of the im
 import aswathy from '../../../assets/images/aswathy.png'
 import sharon from '../../../assets/images/sharon.png'
 import rinu from '../../../assets/images/rinu.png'
+import krish from '../../../assets/images/krish.png'  
+import kala from '../../../assets/images/kala.png'
 
 // Reusable animation props
 const fadeInUp = {
@@ -92,7 +94,27 @@ const directorsData = [
         position:"Domain Expert Director (Art Outreach)",
         imageUrl: sharon,
         bio: [
-            "Sharon Prince is a dedicated social work professional with a postgraduate degree and UGC NET certification. With over a year of teaching experience, she brings expertise in content creation to her role as a freelancer, having collaborated with educational institutions and jewellery brands for over 5 years. As a certified yoga and mindfulness-based stress reduction (MBSR) trainer, and zumba instructor, sharon conducts workshops that foster perspective development, mindfulness, and well-being. Her research interests include art therapy, mindfulness, child care, and elderly care, reflecting her passion for holistic development and social welfare. As a member of padma foundation, sharon looks forward to contributing her skills and experience to support the organization's mission."
+            "Sharon Prince, Domain Expert Director in Art Outreach at Padma Foundation is a passionate social work professional with an MSW degree specialized in Medical & Psychiatry. Certified by UGC NET, she brings over a year of teaching experience prioritizing engaging and interactive learning. She also served as a Youth Mentor at Magic Bus India Foundation, where she empowered students through life skills training, counseling, and mentoring. ",
+            "Sharon is also a certified Yoga & Mindfulness-Based Stress Reduction (MBSR) Trainer and Zumba Instructor, conducting workshops that foster mindfulness, well-being, and perspective development. Her passionate routine of writing has resulted in 5+ years of freelance content writing experience collaborating with educational institutions and jewellery brands.",
+            "At Padma Foundation, Sharon leverages her expertise to support our mission, driven by her dedication to holistic development and social welfare, particularly among vulnerable communities."
+        ]
+    },
+     {
+        name: "Krishnendu Rajagopal",
+        position:"Domain Expert Director (Ai and Performing Art)",
+        imageUrl: krish,
+        bio: [
+            "Krishnendu Rajagopal is an AI Engineer with expertise in designing and deploying machine learning solutions across diverse domains. She has experience building scalable models for predictive analytics, anomaly detection, and time-series forecasting. Her work spans applications such as regression, deep learning, and generative AI, with a focus on solving complex challenges and improving model performance. She holds a Master of Technology in Artificial Intelligence from Amrita Vishwa Vidyapeetham and a Bachelor of Technology in Electronics and Communication Engineering from North Eastern Frontier Technical University.",
+            "Beyond applied AI, Krishnendu has contributed to research at the intersection of technology, culture, and creativity. She designed Generative AI-driven avatars for enhancing Indian classical dance learning using computer vision techniques, presenting this work at the 1st International IKS Conference (Dyuti 2025). She also achieved 96.63% accuracy in Carnatic raga classification by training advanced RNN-based models, with results presented at the 2023 14th International Conference on Computing, Communication, and Networking Technologies. In addition to her technical and research contributions, Krishnendu is also a performing artist in Indian classical dance and music, enabling her to blend tradition with innovation in unique and meaningful ways. Currently based in the UK, she holds a Dependent Visa valid until August 15, 2026.."
+        ]
+    },
+     {
+        name: "Kalamandalam Pooja Ratheesh",
+        position:"Domain Expert Director (Kuchipudi and Dance Pedagogy)",
+        imageUrl: kala,
+        bio: [
+            " Kalamandalam Pooja Ratheesh is a distinguished Kuchipudi dancer, choreographer, and teacher hailing from Kannur, Kerala. She began her dance journey at the tender age of three and underwent rigorous training in Mohiniyattam and Kuchipudi at Kerala Kalamandalam University for over eight years. Pooja holds a Bachelor's degree in Mohiniyattam with first-class honors from Kerala Kalamandalam, which she completed in 2018, and a Master's degree in Performing Arts with a Gold Medal in Kuchipudi from the University of Hyderabad, which she completed in 2020.",
+            "As a seasoned performer with a career spanning over 12 years, Pooja has graced more than 300 prestigious stages across India. She is accredited as a B-grade artist by Doordarshan and has choreographed numerous items in Sanskrit and Telugu for Kuchipudi. Currently, she serves as a guest lecturer in the Kuchipudi department at Kerala Kalamandalam, sharing her expertise with aspiring dancers. In addition to her academic and performance background, Pooja imparts dance lessons to students of all ages worldwide. Her dedication to her craft is further underscored by her qualification in the UGC NET for the post of Assistant Professor in 2019. Pooja continues to inspire and nurture the next generation of dancers through her teaching and performances.",
         ]
     },
     
@@ -136,7 +158,7 @@ const DirectorProfile = ({ name, position, imageUrl, bio, reverse = false, index
                 <OrnateImageFrame imageUrl={imageUrl} altText={`Profile of ${name}`} />
             </div>
             <motion.p 
-                className='pt-6 capitalize text-base'
+                className='pt-8 capitalize text-base'
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}

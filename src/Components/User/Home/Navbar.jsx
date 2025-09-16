@@ -204,9 +204,8 @@ const Navbar = () => {
                
                className="text-white pt-6 font-helvetica">
                 <span className="uppercase ">
-                  Ambadi Kattungal, Chunangaveli</span> <br />
-                  Erumathala P.O. Aluva,<br/>
-                  Ernakulam, Kerala 683112
+                  115, Judges Avenue</span> <br />
+                  Kaloor, Kerala 682017
               </motion.p>
 
               <motion.div

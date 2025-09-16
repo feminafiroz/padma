@@ -160,7 +160,7 @@ const Contact = () => {
                 {...fadeInUp}
                 transition={{ ...fadeInUp.transition, delay: 0.2 }}
               >
-                Looking for more information or have a question? Email us at <a href="mailto:aswathyrajan@padmafoundation.in" className="underline">aswathyrajan@padmafoundation.in</a> or fill in the form below and we'll get back to you.
+                Looking for more information or have a question? Email us at <a href="mailto:info@padmafoundation.in" className="underline">info@padmafoundation.in</a> or fill in the form below and we'll get back to you.
               </motion.p>
             </div>
 
@@ -173,8 +173,8 @@ const Contact = () => {
               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700 rotate-45">
                 <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
               </svg>
-              <a href="mailto:aswathyrajan@padmafoundation.in" className="text-xl text-gray-800 font-medium underline tracking-wide hover:text-dark-red transition-colors">
-                aswathyrajan@padmafoundation.in
+              <a href="mailto:info@padmafoundation.in" className="text-xl text-gray-800 font-medium underline tracking-wide hover:text-dark-red transition-colors">
+                info@padmafoundation.in
               </a>
             </motion.div>
             
@@ -185,16 +185,15 @@ const Contact = () => {
             >
               <motion.div {...fadeInUp}>
                 <h4 className="font-bold text-gray-800 mb-2">connect</h4>
-                <a href="#" className="block hover:text-dark-red text-[#232323]">Facebook</a>
-                <a href="#" className="block hover:text-dark-red text-[#232323]">Instagram</a>
-                <a href="#" className="block hover:text-dark-red text-[#232323]">LinkedIn</a>
+                <a   href="https://www.facebook.com/share/1ADAt5NU5g/" target="_blank" rel="noopener noreferrer" className="block hover:text-dark-red text-[#232323]">Facebook</a>
+                <a   href="https://www.instagram.com/padma_artschool?igsh=eXA2bnMzaXh3dnJ2" target="_blank" rel="noopener noreferrer" className="block hover:text-dark-red text-[#232323]">Instagram</a>
+                <a  href="https://www.linkedin.com/company/padma-foundation-for-art-and-culture/" target="_blank" rel="noopener noreferrer" className="block hover:text-dark-red text-[#232323]">LinkedIn</a>
               </motion.div>
               
               <motion.div {...fadeInUp}>
                 <h4 className="font-bold text-gray-800 mb-2">visit us</h4>
-                <p className='text-[#232323]'>Ambadi Kattungal, Chunangaveli</p>
-                <p className='text-[#232323]'>Erumathala P.O. Aluva</p>
-                <p className='text-[#232323]'>Ernakulam, Kerala 683112</p>
+                <p className='text-[#232323]'> 115, Judges Avenue</p>
+                <p className='text-[#232323]'> Kaloor, Kerala 682017</p>
               </motion.div>
               
               <motion.div {...fadeInUp}>

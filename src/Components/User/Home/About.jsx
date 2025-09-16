@@ -138,7 +138,7 @@ function About() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, delay: 0.3 }}
                 >
-                    Padma is a knowledge-sharing and creation domain that leverages art, culture, and ancient wisdom to empower individuals and communities. Born out of the pandemic's challenges, padma has grown into a vibrant platform, connecting people worldwide through its multifaceted approach. Guided by the principles of Presence, Awareness, Dharma, Movement, and Awakening (P.A.D.M.A.), padma fosters a deeper understanding of oneself and the world, promoting holistic growth and transformation. Through education, artistic expression, and healing, padma aims to liberate knowledge and promote positive change, inspiring individuals to bloom into their full potential.
+                    Padma is a knowledge-sharing and creation domain that leverages art, culture, and ancient wisdom to empower individuals and communities. Born out of the pandemic's challenges in 2019, padma has grown into a vibrant platform, connecting people worldwide through its multifaceted approach. Guided by the principles of Presence, Awareness, Dharma, Movement, and Awakening (P.A.D.M.A.), padma fosters a deeper understanding of oneself and the world, promoting holistic growth and transformation. Through education, artistic expression, and healing, padma aims to liberate knowledge and promote positive change, inspiring individuals to bloom into their full potential.
                 </motion.p>
             </div>
         </section>
