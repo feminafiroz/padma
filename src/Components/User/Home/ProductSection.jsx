@@ -149,11 +149,11 @@ const ProductSection = () => {
                     {service.items.map((item, itemIndex) => (
                       <li
                         key={itemIndex}
-                        className="leading-relaxed relative pl-6 before:content-['★'] before:absolute before:left-0 before:text-white"
+                        className="leading-relaxed relative pl-6 before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:bg-white"
                       >
                         {item}
                       </li>
-                    ))}
+                    ))} 
                   </ul>
                 </div>
               </div>
