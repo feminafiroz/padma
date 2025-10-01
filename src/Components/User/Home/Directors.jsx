@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import dirline from '../../../assets/images/dirline.svg'
 import phdesign from '../../../assets/images/phdesign.svg' //left side of the image frame 
 import aswathy from '../../../assets/images/aswathy.png'
-import sharon from '../../../assets/images/sharon.png'
+import sharon from '../../../assets/images/sharonn.png'
 import rinu from '../../../assets/images/rinu.png'
 import krish from '../../../assets/images/krish.png'  
 import kala from '../../../assets/images/kala.png'
